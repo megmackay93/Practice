@@ -16,10 +16,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        overrideUserInterfaceStyle = .light
         
         tableView.dataSource = contentManager
         tableView.delegate = contentManager
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        
+        tabBar.selectedItem = tabBar.items?[0]
         
         contentManager.fetchContent {
             print("fetch content completion")
